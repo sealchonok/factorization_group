@@ -1,4 +1,15 @@
-﻿#include <chrono>
+﻿/*
+TODO: 
+    Реализовать методы:
+        Ленстры
+        Перебора
+        Полларда
+        Ферма
+        Диксона
+        Лемана
+*/
+
+#include <chrono>
 #include <algorithm>
 #include <string>
 #include <iostream>
@@ -7,6 +18,8 @@
 #include <regex>
 #include <numeric>
 #include <vector>
+#include <locale>
+
 using namespace std;
 
 template <typename T>
@@ -70,6 +83,8 @@ void Run(string method_name, Method<T> p, vector<int> data)
 
 int main()
 {
+
+    setlocale(LC_ALL, "Ru"); // Устанавливаем Русскую локаль, поддерживающую вывод символов русского языка
 
     Run("primeFactorization", primeFactorization, { 1775, 700, 12, 214, 2132, 24, 34, 412, 41, 47, 56, 59, 62, 62, 66, 69, 70,
         76, 84, 90, 103, 106, 107, 117, 124, 139, 149, 153, 162, 173, 180, 182,

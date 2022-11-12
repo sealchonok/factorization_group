@@ -131,10 +131,12 @@
     <ClCompile Include="factorization_main.cpp" />
     <ClCompile Include="Remizova.cpp" />
     <ClCompile Include="Romanov.cpp" />
+    <ClCompile Include="Stoler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Remizova.h" />
     <ClInclude Include="Romanov.h" />
+    <ClInclude Include="Stoler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

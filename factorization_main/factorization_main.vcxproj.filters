@@ -24,12 +24,18 @@
     <ClCompile Include="Romanov.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Stoler.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Remizova.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Romanov.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Stoler.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

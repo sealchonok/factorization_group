@@ -1,14 +1,4 @@
-﻿/*
-TODO: 
-    Реализовать методы:
-        Ленстры
-        Перебора
-        Полларда
-        Ферма
-        Диксона
-        Лемана
-*/
-#include <chrono>
+﻿#include <chrono>
 #include <algorithm>
 #include <string>
 #include <sstream>
@@ -20,6 +10,7 @@ TODO:
 #include <fstream>
 #include "Remizova.h"
 #include "Romanov.h"
+#include "Stoler.h"
 using namespace std;
 void print(std::vector<int> const& input)
 {
@@ -57,6 +48,7 @@ int main()
     
     Run("Prime Factorization", primeFactorization, data);
     Run("Dixon Factorization", DixonFactor, data);
+    Run("Pollard Po", PollardPo, data);
 }
 
 

@@ -2,7 +2,7 @@
 #include <vector>
 #include <random>
 #include <cmath>
-#include "Pakhomov.h"
+#include "Remizova.h"
 
 #define INF numeric_limits<int>::max()
 

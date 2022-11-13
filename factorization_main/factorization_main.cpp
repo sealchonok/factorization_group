@@ -48,7 +48,7 @@ int main()
     
    //Run("Pollard Po", PollardPo, data);
    Run("Pollard_P1", Pollard_P1, data);
-   Run("Prime Factorization", primeFactorization, data);
+   //Run("Prime Factorization", primeFactorization, data);
   // Run("Dixon Factorization", DixonFactor, data);
    Run("Lenstra’s Elliptic Curve Factorization", EllipticCurveFactorisation, data);
   

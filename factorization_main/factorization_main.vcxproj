@@ -130,12 +130,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="factorization_main.cpp" />
+    <ClCompile Include="Pakhomov.cpp" />
     <ClCompile Include="PollardP1.cpp" />
     <ClCompile Include="Remizova.cpp" />
     <ClCompile Include="Romanov.cpp" />
     <ClCompile Include="Stoler.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Pakhomov.h" />
     <ClInclude Include="PollardP1.h" />
     <ClInclude Include="Remizova.h" />
     <ClInclude Include="Romanov.h" />

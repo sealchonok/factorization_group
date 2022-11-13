@@ -29,8 +29,9 @@ void Run(string method_name, Method<T> p, vector<int> data)
         auto stop = chrono::system_clock::now();
         auto time = chrono::duration_cast<chrono::microseconds>(stop - start).count();
 
+        cout << data[i] << ":\n";
         print(res);
-        cout << endl << time << endl;
+        cout << "\n" << time << " ms.\n\n";
     }
 
 
@@ -39,13 +40,13 @@ void Run(string method_name, Method<T> p, vector<int> data)
 
 int main()
 {
-    vector<int> data = {2225,300,35,150,12,30,444,22,660,};
+    vector<int> data = { 300564, 319, 18419, 123455, 23449, 84923, 2225, 300, 35, 150, 12, 30, 444, 22, 660, };
    
     
    //Run("Pollard Po", PollardPo, data);
-   Run("Pollard_P1", Pollard_P1, data);
+   //Run("Pollard_P1", Pollard_P1, data);
    Run("Prime Factorization", primeFactorization, data);
-  // Run("Dixon Factorization", DixonFactor, data);
+   Run("Dixon Factorization", DixonFactor, data);
   
 }
 

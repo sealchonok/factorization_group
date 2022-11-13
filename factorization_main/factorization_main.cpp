@@ -49,14 +49,14 @@ int main()
 {
     setlocale(LC_ALL, "Ru");
 
-    vector<int> data = { 13029, 202429, 591157, 891265, 1113121, 25060027, 33550369, 59549297, 102941291, 396501869, 1244502576, 1403943942 };
+    vector<int> data = { 121,130, 2024, 590, 891265, 111, 25, 33550369, 59549297, 102941291, 396501869};
    
     
-    // Run("Pollard Po", PollardPo, data);
-    Run("Pollard_P1", Pollard_P1, data);
+    Run("Pollard Po", PollardPo, data);
     Run("Prime Factorization", primeFactorization, data);
-    // Run("Dixon Factorization", DixonFactor, data);
+    Run("Dixon Factorization", DixonFactor, data);
     Run("Lenstra’s Elliptic Curve Factorization", EllipticCurveFactorisation, data);
+    Run("Pollard_P1", Pollard_P1, data);
   
 }
 

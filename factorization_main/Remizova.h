@@ -8,3 +8,4 @@ std::vector<int> DixonFactor(int N);
 std::vector<int> Pollard_P1(int N);
 std::vector<int> DixonFactor(int N);
 std::vector<int> PollardPo(int n);
+std::vector<int> EllipticCurveFactorisation(int n);

@@ -1,5 +1,7 @@
-#include "Remizova.h"
+﻿#include "Remizova.h"
 #include<vector>
+#include <string>
+#include <iostream>
 using namespace std;
 
 vector<int> primeFactorization(int n) {
@@ -19,3 +21,4 @@ vector<int> primeFactorization(int n) {
     }
     return ans;
 }
+

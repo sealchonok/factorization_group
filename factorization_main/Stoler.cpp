@@ -1,5 +1,6 @@
 #include "Stoler.h"
 #include<vector>
+//#include "Remizova.h"
 #include <numeric>
 using namespace std;
 

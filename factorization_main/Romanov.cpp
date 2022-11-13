@@ -6,35 +6,32 @@
 
 std::vector<int> DixonFactor(int N)
 {
-    std::vector<int> Bs = { 2, 3, 5, 7, 11 };    // B = 11
+    constexpr int Bs[] = { 2, 3, 5, 7, 11, 13 };    // B = 13
     
-    std::vector< std::pair<int, int> > B_pairs;         // vector of pairs of B-smooth squares
+    std::vector< std::pair<int, int> > B_pairs;     // vector of pairs of B-smooth squares
     
-    int sqrt_N = int(sqrt(N));      
+    int sqrt_N = int(sqrt(N)) + 1;      
     for (int i = sqrt_N; i < N; ++i)        // range from sqrt(N) to N
     {
-        std::pair<int, int> v;
-        for (int j : Bs)                    // Simplified algorithm to find related squares (leds to duplicates results)
+        for (int j : Bs)                    // Simplified algorithm to find related squares (leds to duplicated results)
         {
             int lhs = (i * i) % N;
             int rhs = (j * j) % N;
 
             if (lhs == rhs)
-            {
-                v = { i, j };
-                B_pairs.push_back(v);
-            }
-
+                B_pairs.emplace_back(i, j);
         }
     }
 
-    std::set<int> DivSet;                                 // use set to remove duplicates
+    std::set<int> DivSet;                               // use set to remove duplicates
     for (auto p : B_pairs) 
     {
-        int div = std::gcd(p.first - p.second, N);        // GCD - greatest common divisor 
+        int div = std::gcd(p.first - p.second, N);      // GCD - greatest common divisor 
 
-        if (div != 1)
+        if (div != 1 && div != N) {
             DivSet.emplace(div);
+            DivSet.emplace(N / div);
+        }
     }
 
     std::vector<int> result (DivSet.begin(), DivSet.end());

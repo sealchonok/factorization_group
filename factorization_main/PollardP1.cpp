@@ -1,10 +1,9 @@
-#include <iostream> 
+п»ї#include <iostream> 
 #include <vector> 
 #include <string> 
-#include "Remizova.h"
 using namespace std;
 
-int gcd(int a, int b) // Вычисление НОД
+int gcd(int a, int b) // Г‚Г»Г·ГЁГ±Г«ГҐГ­ГЁГҐ ГЌГЋГ„
 {
 	if (a < 0)
 		return 2;
@@ -13,7 +12,7 @@ int gcd(int a, int b) // Вычисление НОД
 	return gcd(b % a, a);
 }
 
-bool isPrime(int n) // Проверка, является ли число простым
+bool isPrime(int n) // ГЏГ°Г®ГўГҐГ°ГЄГ , ГїГўГ«ГїГҐГІГ±Гї Г«ГЁ Г·ГЁГ±Г«Г® ГЇГ°Г®Г±ГІГ»Г¬
 {
 	if (n <= 1)
 		return false;
@@ -27,16 +26,14 @@ bool isPrime(int n) // Проверка, является ли число простым
 	return true;
 }
 
-int pollard(int n) //Генерация простых множителей
+int pollard(int n) 
 {
 	long long a = 2;
 	int i = 2;
 	while (true)
 	{
 		a = ((long long)pow(a, i)) % n;
-		a += n;
-		a %= n;
-		int d = gcd(a - 1, n); //Среднее арифметическое
+		int d = gcd(a - 1, n); 
 		if (d > 1)
 		{
 			return d;
@@ -46,51 +43,31 @@ int pollard(int n) //Генерация простых множителей
 	}
 }
 
-int check()
-{
-	string s;
-	bool check_point = true;
-	cout << "Enter the number:" << endl;
-	while (check_point)
-	{
-		check_point = false;
-		getline(cin, s); //Считывание числа как строки
-		for (int i = 0; i < s.length(); i++)
-		{
-			if (!isdigit(s[i]))
-			{
-				cout << "You entered the characters or your number is not integer!" << endl;
-				cout << "Please, enter new number:" << endl;
-				check_point = true;
-				break;
-			}
-		}
-	}
-	int num = stoi(s); //Приведение строки к типу int
-	if (isPrime(num)) { //Проверка на простоту
-		cout << "Your number is prime" << endl;
-		return 0;
-	}
-	return num;
-}
+
 
 vector<int> Pollard_P1(int n)
 {
 	int num = n;
-	vector<int> ans;
-	while (true)
-	{
-		int d = pollard(num);
-		ans.push_back(d);
-		int r = (num / d);
-		if (isPrime(r))
-		{
-			ans.push_back(r);
-			break;
-		}
-		else
-			num = r;
+	if (isPrime(num)) {
+		cout << "Your number is prime" << endl;
+
 	}
-	return ans;
+	else {
+		vector<int> ans;
+		while (true)
+		{
+			int d = pollard(num);
+			ans.push_back(d);
+			int r = (num / d);
+			if (isPrime(r))
+			{
+				ans.push_back(r);
+				break;
+			}
+			else
+				num = r;
+		}
+		return ans;
+	}
 }
 

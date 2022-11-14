@@ -129,6 +129,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dzhabrailov.cpp" />
     <ClCompile Include="factorization_main.cpp" />
     <ClCompile Include="Pakhomov.cpp" />
     <ClCompile Include="PollardP1.cpp" />

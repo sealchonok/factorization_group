@@ -27,6 +27,7 @@ void print(std::vector<int> const& input)
 template <typename T>
 void Run(string method_name, Method<T> p, vector<int> data)
 {
+    auto av_time = 0;
     cout << endl << method_name << endl;
     for (int i = 0; i < data.size(); i++) {
         cout << "Число: " << data[i] << endl;
@@ -39,7 +40,9 @@ void Run(string method_name, Method<T> p, vector<int> data)
         cout << "\tРазложение: ";
         print(res);
         cout << endl << "\tВремя (мкс): " << time << endl;
+        av_time = av_time + time;
     }
+    cout << endl << "\tСреднее для тестов (мкс): " << (av_time/data.size()) << endl;
 
 
 }
@@ -49,13 +52,14 @@ int main()
 {
     setlocale(LC_ALL, "Ru");
 
-    vector<int> data = { 121,130, 2024, 590, 891265, 111, 25, 33550369, 59549297, 102941291, 396501869};
+    vector<int> data = { 12, 225, 113, 2056, 34560, 7884392};
    
     
     Run("Pollard Po", PollardPo, data);
     Run("Prime Factorization", primeFactorization, data);
     Run("Dixon Factorization", DixonFactor, data);
     Run("Lenstra’s Elliptic Curve Factorization", EllipticCurveFactorisation, data);
+    Run("Ferma", Ferma, data);
     Run("Pollard_P1", Pollard_P1, data);
   
 }

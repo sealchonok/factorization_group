@@ -1,7 +1,6 @@
 #include <iostream> 
 #include <vector> 
 #include <string> 
-#include "PollardP1.h"
 using namespace std;
 
 int gcd(int a, int b) // Вычисление НОД
@@ -44,63 +43,31 @@ int pollard(int n) //Генерация простых множителей
 	}
 }
 
-int check()
+
+
+vector<int> Pollard_P1(int n)
 {
-	string s;
-	bool check_point = true;
-	cout << "Enter the number:" << endl;
-	while (check_point)
-	{
-		check_point = false;
-		getline(cin, s); //Считывание числа как строки
-		for (int i = 0; i < s.length(); i++)
-		{
-			if (!isdigit(s[i]))
-			{
-				cout << "You entered the characters or your number is not integer!" << endl;
-				cout << "Please, enter new number:" << endl;
-				check_point = true;
-				break;
-			}
-		}
-	}
-	int num = stoi(s); //Приведение строки к типу int
+
+	int num = n;
 	if (isPrime(num)) { //Проверка на простоту
 		cout << "Your number is prime" << endl;
-		return 0;
-	}
-	return num;
-}
 
-vector<int> Pollard_P2(int n)
-{
-	int num = n;
-	vector<int> ans;
-	while (true)
-	{
-		int d = pollard(num);
-		ans.push_back(d);
-		int r = (num / d);
-		if (isPrime(r))
+	}
+	else {
+		vector<int> ans;
+		while (true)
 		{
-			ans.push_back(r);
-			break;
+			int d = pollard(num);
+			ans.push_back(d);
+			int r = (num / d);
+			if (isPrime(r))
+			{
+				ans.push_back(r);
+				break;
+			}
+			else
+				num = r;
 		}
-		else
-			num = r;
+		return ans;
 	}
-	return ans;
-}
-
-int PollardP1::Pollard_P1()
-{
-	int n = check();
-	if (!n) {
-		return 0;
-	}
-	int num = n;
-
-	cout << "Prime factors of " << n << " are ";
-	for (int elem : Pollard_P2(num))
-		cout << elem << " ";
 }

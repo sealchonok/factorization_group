@@ -11,9 +11,7 @@
 #include <locale>
 
 #include "Remizova.h"
-#include "Romanov.h"
-#include "Stoler.h"
-#include "Pakhomov.h"
+
 
 using namespace std;
 

@@ -1,7 +1,7 @@
 #include <iostream> 
 #include <vector> 
 #include <string> 
-#include "Remizova.h"
+#include "PollardP1.h"
 using namespace std;
 
 int gcd(int a, int b) // Вычисление НОД
@@ -34,8 +34,6 @@ int pollard(int n) //Генерация простых множителей
 	while (true)
 	{
 		a = ((long long)pow(a, i)) % n;
-		a += n;
-		a %= n;
 		int d = gcd(a - 1, n); //Среднее арифметическое
 		if (d > 1)
 		{
@@ -74,7 +72,7 @@ int check()
 	return num;
 }
 
-vector<int> Pollard_P1(int n)
+vector<int> Pollard_P2(int n)
 {
 	int num = n;
 	vector<int> ans;
@@ -94,3 +92,15 @@ vector<int> Pollard_P1(int n)
 	return ans;
 }
 
+int PollardP1::Pollard_P1()
+{
+	int n = check();
+	if (!n) {
+		return 0;
+	}
+	int num = n;
+
+	cout << "Prime factors of " << n << " are ";
+	for (int elem : Pollard_P2(num))
+		cout << elem << " ";
+}
